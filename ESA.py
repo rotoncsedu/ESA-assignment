@@ -58,7 +58,7 @@ for terms in vocab:
 N= len(docs)
 idf = {}
 for terms in vocab:
-    idf[terms] = m.log10(N/df[terms])
+    idf[terms] = m.log2(N/df[terms])
 
 print("\nIDF Matrix (rows= Terms, columns= IDF):")
 for terms in idf:
@@ -117,4 +117,5 @@ similarity = cosine_sim(v1_esa_vec, v2_esa_vec)
 
 print("\n ESA Vector for 'big crocodile' :",np.round(v1_esa_vec,3))
 print("\n ESA Vector for 'scary crocodile' :",np.round(v2_esa_vec,3))
+
 print("\n Cosine Similarity: ",np.round(similarity,3))
